@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('scm') {
             steps {
-        git branch: 'main', url: 'https://github.com/Bavyadharshini-Rajaganapathy/devops1.git'
+        git branch: 'main', url: 'https://github.com/DEEPIKAS22CSR040/new1.git'
             }
         }
         stage('build') {
@@ -16,7 +16,7 @@ pipeline {
 stage('build to images') {
             steps {
                script{
-                  sh 'docker build -t /simplewebapp .'
+                  sh 'docker build -t deepika040/mysimplewebapplication .'
                }
     }
 }
@@ -24,7 +24,7 @@ stage('push to hub') {
             steps {
                script{
                  withDockerRegistry(credentialsId: 'Docker_cred', url: 'https://index.docker.io/v1/') {
-                  sh 'docker push deepika040/simplewebapp'
+                  sh 'docker push deepika040/mysimplewebapplication'
                }
             }
             }
