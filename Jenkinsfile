@@ -23,7 +23,7 @@ pipeline {
         stage('push to hub') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'DEEPIKAS22CSR040', url: 'https://index.docker.io/v1/') {
+                    withDockerRegistry(credentialsId: 'docker-hub-credential', url: 'https://index.docker.io/v1/') {
                         sh 'docker push deepika040/mysimplewebapplication'
                     }
                 }
